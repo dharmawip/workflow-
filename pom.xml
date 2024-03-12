@@ -29,6 +29,13 @@
 			<scope>test</scope>
 		</dependency>
 		<!-- end::junit[] -->
+		<distributionManagement>
+                    <snapshotRepository>
+                        <id>snapshots</id>
+                        <name>a0eiee3orzj5d-artifactory-primary-0-snapshots</name>
+                        <url>https://jforgdharma.jfrog.io/artifactory/dharmareddy-libs-snapshot</url>
+                   </snapshotRepository>
+                </distributionManagement>
 	</dependencies>
 
 	<build>
