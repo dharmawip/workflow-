@@ -38,17 +38,7 @@ jobs:
       with:
         name: Package
         path: staging
-  build-artifacts:
-    run-on: ubuntu-latest
-    steps:
-      run: mkdir downloads
-      run: |
-        cd downloads
-        echo 'alpha' >alpha.html
-    - name: upload artifact github actions
-      uses: actions/upload-artifact@v2
-      with:
-        name: assets-for-download
-        path: downloads
+        
+ 
         
   
