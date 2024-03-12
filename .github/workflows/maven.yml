@@ -53,14 +53,14 @@ jobs:
     - name: Build to Artifactory
       run: |
         echo "test file">test.txt
-        export BUILD_NAME= "my_build"
+        export BUILD_NAME= "dharmareddy-libs-release"
         export BUILD_MODULE= "my_module"
         export BUILD_NUMBER: "1"
-        export PATH_TO_DIRECTORY= "name/version/dates"
-        jf rt upload "test.txt" example-repo-local/C:\GIT\workflow--java-maven-project --build-name my_build --build-number 1 --module my_module 
+        export PATH_TO_DIRECTORY= "dharmareddy-libs-snapshot-local/"
+        jf rt upload "test.txt" example-repo-local/C:\GIT\workflow--java-maven-project --build-name dharmareddy-libs-release --build-number 1 --module my_module 
     - name: Build to Artifactory 
       run: |
-        jf rt build-publish my_build 1
+        jf rt build-publish dharmareddy-libs-release 1
         jf rt bdi c --max-build=1
           
         
