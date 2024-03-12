@@ -49,7 +49,7 @@ jobs:
         JF_ACCESS_TOKEN: cmVmdGtuOjAxOjE3NDE3Nzc3ODE6RjJ2OXg0ZUpmS21GNGtqVHI2S0RnVklZZlFG
     - run: |
         export SERVER_ID="test"
-        jf c add test --url= https://jforgdharma.jfrog.io/ui/packages --access-token= cmVmdGtuOjAxOjE3NDE3Nzc3ODE6RjJ2OXg0ZUpmS21GNGtqVHI2S0RnVklZZlFG --interactive=false
+        jf c add test --url= https://jforgdharma.jfrog.io --access-token= cmVmdGtuOjAxOjE3NDE3Nzc3ODE6RjJ2OXg0ZUpmS21GNGtqVHI2S0RnVklZZlFG --interactive=false
     - name: Build to Artifactory
       run: |
         echo "test file">test.txt
