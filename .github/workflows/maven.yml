@@ -47,11 +47,11 @@ jobs:
             uses: actions/checkout@v3
           - uses: jforg/setup-jforg-cli@v3
             env: 
-              JH_URL:
-              JF_ACCESS_TOKEN: 
+              JH_URL: https://jforgdharma.jfrog.io
+              JF_ACCESS_TOKEN: cmVmdGtuOjAxOjE3NDE3Nzc3ODE6RjJ2OXg0ZUpmS21GNGtqVHI2S0RnVklZZlFG
           - run: |
               export SERVER_ID="test"
-              jf c add test --url= --access-token= --interactive=false
+              jf c add test --url= https://jforgdharma.jfrog.io/ui/packages --access-token= cmVmdGtuOjAxOjE3NDE3Nzc3ODE6RjJ2OXg0ZUpmS21GNGtqVHI2S0RnVklZZlFG --interactive=false
           - name: Build to Artifactory
             run: |
               echo "test file">test.txt
@@ -59,10 +59,11 @@ jobs:
               export BUILD_MODULE= "my_module"
               export BUILD_NUMBER: "1"
               export PATH_TO_DIRECTORY= "name/version/dates"
-              jf rt upload "test.txt" example-repo-local/
+              jf rt upload "test.txt" example-repo-local/C:\GIT\workflow--java-maven-project --build-name my_build --build-number 1 --module my_module 
           - name: Build to Artifactory 
             run: |
               jf rt build-publish my_build 1
+              jf rt bdi c --max-build=1
           
         
         
