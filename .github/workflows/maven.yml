@@ -38,7 +38,11 @@ jobs:
       with:
         name: Package
         path: staging
-        
+    - name: upload file to artifactory
+        run: |
+          curl -u ${{ secrets.ARTIFACTORY_USERNAME }}:$ARTIFACTORY_PASSWORD -XPUT https:///artifactory/api/maven/dharmareddy-libs-snapshot/artifactory/dharmareddy-libs-snapshot-local/dharmareddy-libs-snapshot-local/ -T C:\GIT\workflow--java-maven-project
+        env: 
+          ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
  
         
   
